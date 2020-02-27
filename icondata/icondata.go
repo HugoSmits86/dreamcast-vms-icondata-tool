@@ -40,13 +40,13 @@ func Decode(r io.Reader) (string, image.Image, error) {
         b := buf[i]
         for j := 0; j < 8; j++ {
             bit := (b & (1 << j)) >> j
-            c := uint8(0xff)
+            c := uint8(255)
             if bit == 1 {
-                c = 0x00
+                c = 0
             }
             x := i % 4 * 8 + (7 - j)
             y := i / 4
-            monoImage.Set(x, y, color.RGBA{c, c, c, 0xff})
+            monoImage.Set(x, y, color.RGBA{c, c, c, 255})
         }
     }
 
