@@ -3,10 +3,11 @@ go:
   - "1.13.1"
   - master
 
+before_install:
+  - go get -t -v ./...
+
 script:
-    - go build
-    - golangci-lint --version
-    - golangci-lint run
-    - go test -v ./...
-    - go test -v -covermode=count -coverprofile=coverage.out ./diff
-    - $GOPATH/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
