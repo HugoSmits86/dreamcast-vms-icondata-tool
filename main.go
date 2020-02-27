@@ -1,7 +1,7 @@
 package main
 
 import (
-    "icondata-vms-tool/icondata"
+    "github.com/HugoSmits86/dreamcast-vms-icondata-tool/icondata"
     "os"
     "image/png"
     "strings"
