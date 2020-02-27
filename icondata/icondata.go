@@ -54,7 +54,7 @@ func Decode(r io.Reader) (string, image.Image, error) {
 	return desc, monoImage, nil
 }
 
-//Encode writes the Image m to w in ICONDATA.VMS format.
+//Encode writes the Image img to w in ICONDATA.VMS format.
 func Encode(w io.Writer, img image.Image) error {
 	if img == nil {
 		return errors.New("image is nil")
