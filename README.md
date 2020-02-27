@@ -8,49 +8,49 @@
 
 Icondata is a Go package for decoding and encoding ICONDATA.VMS file format.
 
-I suspect that most users of this project are likely hobbyists instead of full-blown programmers.
-For them I have included a command-line tool in the form of main.go. This is a stand-alone program that lets users encode and decode ICONDATA.VMS files from the command line.
+I suspect that most users of this project are likely hobbyists instead of full-blown programmers.\
+For them I have included a command-line tool in the form of main.go. This is a stand-alone\
+program that lets users encode and decode ICONDATA.VMS files from the command line.
 
 Currently only the black and white icons are supported.
 
 # Install package
 
-The package includes a make file that can install the package for multiple platforms, 
-with the following commands:
+The package includes a make file that can install the package for multiple platforms.
+
 ```Bash
 #compile and install package for Windows
-$make install-windows
-#compile and install package for Macos
-$make install-macos
+make install-windows
+#compile and install package for MacOs
+make install-macos
 #compile and install package for Linux
-$make install-linux
+make install-linux
 ```
 
 # Build tool
 
-The command-line tool includes a make file that can build the tool for multiple platforms,
-With the following commands:
+The command-line tool includes a make file that can build the tool for multiple platforms.
 
 ```Bash
 #compile and install package for Windows
-$make install-windows
-#compile and install package for Macos
-$make install-macos
+make install-windows
+#compile and install package for MacOs
+make install-macos
 #compile and install package for Linux
-$make install-linux
+make install-linux
 ```
 
 # Usage tool
 
 The tool program can be used from the command-line. Here is an example:
 ```Bash
-$./icontool_macos -i test.vms -o test.png
+./icontool_macos -i test.vms -o test.png
 ```
 
 # Todo
 
-Need to add support for color icons.
-Generate VMI file for VMS file.
+* Support color icons.
+* Generate VMI file for VMS file.
 
 # Disclaimer
 
