@@ -8,6 +8,7 @@ import (
     "errors"
 )
 
+// Decode reads a ICONDATA.VMS file from r and returns it as an image.Image.
 func Decode(r io.Reader) (string, image.Image, error) {
     if r == nil {
         return "", nil, errors.New("reader is nil")
@@ -53,6 +54,7 @@ func Decode(r io.Reader) (string, image.Image, error) {
     return desc, monoImage, nil
 }
 
+//Encode writes the Image m to w in ICONDATA.VMS format. 
 func Encode(w io.Writer, img image.Image) error {
     if img == nil {
         return errors.New("image is nil")
