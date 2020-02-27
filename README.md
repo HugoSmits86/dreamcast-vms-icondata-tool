@@ -27,6 +27,25 @@ make install-macos
 make install-linux
 ```
 
+# Usage package
+
+Encoding image into ICONDATA.VMS file example:
+```Go
+err = icondata.Encode(file, img)
+if err != nil {
+    log.Fatal(err)
+}
+```
+
+Decoding ICONDATA.VMS file example:
+```Go
+desc, img, err := icondata.Decode(file)
+if err != nil {
+    log.Fatal(err)
+}
+```
+
+
 # Build tool
 
 The command-line tool includes a make file that can build the tool for multiple platforms.
@@ -46,6 +65,7 @@ The tool program can be used from the command-line. Here is an example:
 ```Bash
 ./icontool_macos -i test.vms -o test.png
 ```
+:warning: NOTE: Currently only the PNG image format is supported.
 
 # Todo
 
