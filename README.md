@@ -10,7 +10,7 @@ Icondata is a Go package for decoding and encoding ICONDATA.VMS file format.
 
 I suspect that most users of this project are likely hobbyists instead of full-blown programmers.\
 For them I have included a command-line tool in the form of main.go. This is a stand-alone\
-program that lets users encode and decode ICONDATA.VMS files from the command line.
+program that lets users encode and decode ICONDATA.VMS files from the command-line.
 
 Currently only the black and white icons are supported.
 
@@ -54,5 +54,6 @@ The tool program can be used from the command-line. Here is an example:
 
 # Disclaimer
 
-This project is offered on a "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+This project is offered on a "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\
+either express or implied.
 
