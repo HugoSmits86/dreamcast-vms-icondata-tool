@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GoDoc](https://godoc.org/github.com/HugoSmits86/dreamcast-vms-icondata-tool/icondata?status.svg)](https://godoc.org/github.com/HugoSmits86/dreamcast-vms-icondata-tool/icondata)
-[![Go Report Card](https://goreportcard.com/report/github.com/HugoSmits86/dreamcast-vms-icondata-tool)](https://goreportcard.com/report/github.com/HugoSmits86/dreamcast-vms-icondata-tool) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/HugoSmits86/dreamcast-vms-icondata-tool)](https://goreportcard.com/report/github.com/HugoSmits86/dreamcast-vms-icondata-tool)
 [![Build Status](https://travis-ci.com/HugoSmits86/dreamcast-vms-icondata-tool.svg?branch=master)](https://travis-ci.com/HugoSmits86/dreamcast-vms-icondata-tool) 
 [![codecov](https://codecov.io/gh/HugoSmits86/dreamcast-vms-icondata-tool/branch/master/graph/badge.svg)](https://codecov.io/gh/HugoSmits86/dreamcast-vms-icondata-tool)
 
