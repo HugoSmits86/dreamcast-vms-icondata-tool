@@ -74,6 +74,6 @@ The tool program can be used from the command-line. Here is an example:
 
 # Disclaimer
 
-This project is offered on a "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\
-either express or implied.
-
+THIS PROJECT IS OFFERED ON A "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+EITHER EXPRESS OR IMPLIED.
