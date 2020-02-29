@@ -13,8 +13,8 @@ func Decode(r io.Reader) (string, image.Image, error) {
 	if r == nil {
 		return "", nil, errors.New("reader is nil")
 	}
-
-	buf := make([]byte, 1024)
+	max := 2048
+	buf := make([]byte, max)
 	_, err := io.ReadFull(r, buf[:24])
 	if err != nil {
 		return "", nil, errors.New("could not read header")
@@ -22,7 +22,7 @@ func Decode(r io.Reader) (string, image.Image, error) {
 	desc := string(buf[:16])
 	monoOff := int(binary.LittleEndian.Uint32(buf[16:20]))
 
-	if monoOff < 24 || monoOff-24 >= 1024 {
+	if monoOff < 24 || monoOff-24 >= max {
 		return "", nil, errors.New("mono offset out of bounds")
 	}
 
