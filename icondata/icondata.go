@@ -13,8 +13,10 @@ func Decode(r io.Reader) (string, image.Image, error) {
 	if r == nil {
 		return "", nil, errors.New("reader is nil")
 	}
+	
 	max := 1024
 	buf := make([]byte, max)
+	
 	_, err := io.ReadFull(r, buf[:24])
 	if err != nil {
 		return "", nil, errors.New("could not read header")
