@@ -71,7 +71,7 @@ func Encode(w io.Writer, img image.Image) error {
 	}
 
 	dest := make([]byte, 152)
-	copy(dest[0:16], []byte("made with govmu!"))
+	copy(dest[0:16], []byte("go-icondata pkg!"))
 
 	off := uint32(24)
 	tmp := make([]byte, 4)
