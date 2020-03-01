@@ -22,15 +22,15 @@ func Decode(r io.Reader) (string, image.Image, error) {
 		return "", nil, errors.New("could not read header")
 	}
 	desc := string(buf[:16])
-	monoOff := int(binary.LittleEndian.Uint32(buf[16:20]))
+	off := int(binary.LittleEndian.Uint32(buf[16:20]))
 
-	if monoOff < 24 || monoOff-24 >= max {
+	if off < 24 || off-24 >= max {
 		return "", nil, errors.New("mono offset out of bounds")
 	}
 
-	_, err = io.ReadFull(r, buf[:(monoOff-24)])
+	_, err = io.ReadFull(r, buf[:(off-24)])
 	if err != nil {
-		return "", nil, errors.New("mono offset out of bounds")
+		return "", nil, err
 	}
 
 	_, err = io.ReadFull(r, buf[:128])
@@ -38,7 +38,7 @@ func Decode(r io.Reader) (string, image.Image, error) {
 		return "", nil, errors.New("could not read mono bitmap")
 	}
 
-	monoImage := image.NewRGBA(image.Rect(0, 0, 32, 32))
+	img := image.NewRGBA(image.Rect(0, 0, 32, 32))
 	for i := 0; i < 128; i++ {
 		b := buf[i]
 		for j := 0; j < 8; j++ {
@@ -49,11 +49,11 @@ func Decode(r io.Reader) (string, image.Image, error) {
 			}
 			x := i%4*8 + (7 - j)
 			y := i / 4
-			monoImage.Set(x, y, color.RGBA{c, c, c, 255})
+			img.Set(x, y, color.RGBA{c, c, c, 255})
 		}
 	}
 
-	return desc, monoImage, nil
+	return desc, img, nil
 }
 
 //Encode writes the Image img to w in ICONDATA.VMS format.
