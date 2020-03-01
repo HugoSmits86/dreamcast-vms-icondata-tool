@@ -70,18 +70,18 @@ func Encode(w io.Writer, img image.Image) error {
 		return errors.New("image too small")
 	}
 
-	dest := make([]byte, 152)
-	copy(dest[0:16], []byte("go-icondata pkg!"))
+	w.Write([]byte("go-icondata pkg!"))
 
-	off := uint32(24)
 	tmp := make([]byte, 4)
-	binary.LittleEndian.PutUint32(tmp, off)
-	copy(dest[16:20], tmp)
+	binary.LittleEndian.PutUint32(tmp, 24)
+	w.Write(tmp)
 
 	binary.LittleEndian.PutUint32(tmp, 0)
-	copy(dest[20:24], tmp)
+	w.Write(tmp)
 
-	i := off
+	dest := make([]byte, 128)
+
+	var i int
 	for y := 0; y < 32; y++ {
 		for x := 0; x < 32; x += 8 {
 			b := uint8(0)
